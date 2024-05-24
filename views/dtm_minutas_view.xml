@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="dtm_minutas_tree" model="ir.ui.view">
+            <field name="name">dtm.minutas.tree</field>
+            <field name="model">dtm.minutas</field>
+            <field name="arch" type="xml">
+                <tree  >
+                    <field name="fecha" widget="date"/>
+
+                </tree>
+            </field>
+        </record>
+
+        <record id="dtm_minutas_form" model="ir.ui.view">
+            <field name="name">dtm.minutas.form</field>
+            <field name="model">dtm.minutas</field>
+            <field name="arch" type="xml">
+                <form string="formulario">
+                    <sheet>
+                        <group>
+                            <field name="fecha" widget="date"/>
+                            <field name="anataciones" />
+                            <field name="asistentes">
+                                <tree editable="bottom">
+                                    <field name="asistente"/>
+                                    <field name ="actividades"/>
+                                </tree>
+
+                            </field>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+         <record id="dtm_minutas_action" model="ir.actions.act_window">
+            <field name="name">Minutas</field>
+            <field name="res_model">dtm.minutas</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="dtm_minutas_menu_action" action="dtm_minutas.dtm_minutas_action"/>
+    </data>
+</odoo>

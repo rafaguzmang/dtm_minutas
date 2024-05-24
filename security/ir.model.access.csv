@@ -1,0 +1,4 @@
+id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
+access_dtm_minutas,access.dtm.minutas,model_dtm_minutas,base.group_user,1,1,1,1
+access_dtm_minutas_asistentes,access.dtm.minutas.asistentes,model_dtm_minutas_asistentes,base.group_user,1,1,1,1
+access_dtm_minutas_nombres,access.dtm.minutas.nombres,model_dtm_minutas_nombres,base.group_user,1,1,1,1
