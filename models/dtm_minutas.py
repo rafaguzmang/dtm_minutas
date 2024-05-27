@@ -6,6 +6,7 @@ class Minutas(models.Model):
     _description = "Modelo para llevar el control de la juntas de Procesos"
 
     fecha = fields.Date(string="Fecha",default = datetime.today())
+    titulo = fields.Char(string="Nombre de la Junta")
     anataciones = fields.Text(string="Anotaciones")
     asistentes = fields.One2many("dtm.minutas.asistentes","model_id")
 
