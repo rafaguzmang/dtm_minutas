@@ -7,7 +7,7 @@
             <field name="arch" type="xml">
                 <tree  >
                     <field name="fecha" widget="date"/>
-
+                    <field name="titulo" />
                 </tree>
             </field>
         </record>
@@ -17,16 +17,20 @@
             <field name="model">dtm.minutas</field>
             <field name="arch" type="xml">
                 <form string="formulario">
+                    <header>
+                        <button type="object" name="action_autocomplear" string="Actualizar" class="btn btn-primary"/>
+                    </header>
                     <sheet>
                         <group>
                             <field name="fecha" widget="date"/>
-                            <field name="anataciones" />
+                            <field name="titulo" />
+                            <field name="anotaciones" />
                             <field name="asistentes">
                                 <tree editable="bottom">
                                     <field name="asistente"/>
+                                    <field name="asistencia"/>
                                     <field name ="actividades"/>
                                 </tree>
-
                             </field>
                         </group>
                     </sheet>

@@ -6,23 +6,32 @@ class Minutas(models.Model):
     _description = "Modelo para llevar el control de la juntas de Procesos"
 
     fecha = fields.Date(string="Fecha",default = datetime.today())
-    anataciones = fields.Text(string="Anotaciones")
+    titulo = fields.Char(string="Nombre de la Junta")
+    anotaciones = fields.Text(string="Anotaciones")
     asistentes = fields.One2many("dtm.minutas.asistentes","model_id")
 
-    @api.model
-    def get_view(self, view_id=None, view_type='form', toolbar=False, submenu=False):
-        res = super(Minutas, self).get_view(view_id=view_id, view_type=view_type, toolbar=toolbar, submenu=submenu)
 
-        # get_self = self.env[''].search([],)
-
-        return res
-
+    def action_autocomplear(self):
+        if not self.asistentes:
+            get_self = self.env['dtm.minutas'].search([],order='id DESC', limit=2)
+            self.titulo = get_self[1].titulo
+            self.anotaciones = get_self[1].anotaciones
+            asistentes = get_self[1].asistentes
+            for asistente in asistentes:
+                vals = {
+                    "model_id":self.id,
+                    "asistente":asistente.asistente.id,
+                    "asistencia":asistente.asistencia,
+                    "actividades":asistente.actividades
+                }
+                self.env['dtm.minutas.asistentes'].create(vals)
 
 class Asistentes(models.Model):
     _name = "dtm.minutas.asistentes"
     _description = "Modelo para llevar la lista de asistentes"
 
     model_id = fields.Many2one("dtm.minutas")
+    asistencia = fields.Boolean(default=True)
     asistente = fields.Many2one("dtm.minutas.nombres",string="Nombre")
     actividades = fields.Text(string="Actividades")
 
