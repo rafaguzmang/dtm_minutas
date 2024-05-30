@@ -9,6 +9,14 @@ class Minutas(models.Model):
     anataciones = fields.Text(string="Anotaciones")
     asistentes = fields.One2many("dtm.minutas.asistentes","model_id")
 
+    @api.model
+    def get_view(self, view_id=None, view_type='form', toolbar=False, submenu=False):
+        res = super(Minutas, self).get_view(view_id=view_id, view_type=view_type, toolbar=toolbar, submenu=submenu)
+
+        get_self = self.env[''].search([],)
+
+        return res
+
 
 class Asistentes(models.Model):
     _name = "dtm.minutas.asistentes"
