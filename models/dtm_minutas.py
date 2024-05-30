@@ -13,7 +13,7 @@ class Minutas(models.Model):
     def get_view(self, view_id=None, view_type='form', toolbar=False, submenu=False):
         res = super(Minutas, self).get_view(view_id=view_id, view_type=view_type, toolbar=toolbar, submenu=submenu)
 
-        get_self = self.env[''].search([],)
+        # get_self = self.env[''].search([],)
 
         return res
 
