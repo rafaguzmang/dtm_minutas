@@ -28,13 +28,8 @@
                     <sheet>
                         <group>
                             <field name="fecha" widget="date"/>
-<<<<<<< HEAD
                             <field name="titulo" />
                             <field name="anotaciones" />
-=======
-                            <field name="titulo"/>
-                            <field name="anataciones" />
->>>>>>> d3725d1f0020426d53bd3df471795475b906282a
                             <field name="asistentes">
                                 <tree editable="bottom">
                                     <field name="asistente"/>

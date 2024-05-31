@@ -7,7 +7,7 @@ class Minutas(models.Model):
 
     fecha = fields.Date(string="Fecha",default = datetime.today())
     titulo = fields.Char(string="Nombre de la Junta")
-    anataciones = fields.Text(string="Anotaciones")
+    anotaciones = fields.Text(string="Anotaciones")
     asistentes = fields.One2many("dtm.minutas.asistentes","model_id")
 
 
