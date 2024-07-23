@@ -4,6 +4,8 @@ from datetime import datetime
 class Minutas(models.Model):
     _name = "dtm.minutas"
     _description = "Modelo para llevar el control de la juntas de Procesos"
+    _order = "fecha desc"
+
 
     fecha = fields.Date(string="Fecha",default = datetime.today())
     titulo = fields.Char(string="Nombre de la Junta")
