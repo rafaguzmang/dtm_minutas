@@ -1,0 +1,19 @@
+<odoo>
+    <record id="module_category_minutas" model = "ir.module.category">
+        <field name="name">Minutas</field>
+        <field name="description">Da permisos de administrador de minutas</field>
+        <field name="sequence">51</field>
+    </record>
+
+    <record id="group_minutas_admin" model="res.groups">
+        <field name="name">Administración Minutas</field>
+        <field name="category_id" ref="module_category_minutas"/>
+        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        <field name="users" eval="[(4, ref('base.user_admin'))]"/>
+    </record>
+
+    <record id="group_minutas_usuarios" model="res.groups">
+        <field name="name">Usuarios Minutas</field>
+        <field name="category_id" ref="module_category_minutas"/>
+    </record>   
+</odoo>

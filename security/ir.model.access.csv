@@ -1,4 +1,10 @@
 id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
-access_dtm_minutas,access.dtm.minutas,model_dtm_minutas,base.group_user,1,1,1,1
-access_dtm_minutas_asistentes,access.dtm.minutas.asistentes,model_dtm_minutas_asistentes,base.group_user,1,1,1,1
-access_dtm_minutas_nombres,access.dtm.minutas.nombres,model_dtm_minutas_nombres,base.group_user,1,1,1,1
+access_dtm_minutas_admin,access.dtm.minutas.admin,model_dtm_minutas,group_minutas_admin,1,1,1,1
+access_dtm_minutas_usuarios,access.dtm.minutas.usuarios,model_dtm_minutas,group_minutas_usuarios,1,1,1,0
+
+access_dtm_minutas_asistentes_admin,access.dtm.minutas.asistentes.admin,model_dtm_minutas_asistentes,group_minutas_admin,1,1,1,1
+access_dtm_minutas_asistentes_usuarios,access.dtm.minutas.asistentes.usuarios,model_dtm_minutas_asistentes,group_minutas_usuarios,1,1,1,0
+
+access_dtm_minutas_nombres_admin,access.dtm.minutas.nombres.admin,model_dtm_minutas_nombres,group_minutas_admin,1,1,1,1
+access_dtm_minutas_nombres_usuarios,access.dtm.minutas.nombres.usuarios,model_dtm_minutas_nombres,group_minutas_usuarios,1,1,1,0
+

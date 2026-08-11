@@ -44,6 +44,6 @@
             <field name="view_mode">tree,form</field>
         </record>
 
-        <menuitem id="dtm_minutas_menu_action" action="dtm_minutas.dtm_minutas_action"/>
+        <menuitem id="dtm_minutas_menu_action" action="dtm_minutas.dtm_minutas_action" groups="dtm_minutas.group_minutas_admin,dtm_minutas.group_minutas_usuarios"/>
     </data>
 </odoo>
